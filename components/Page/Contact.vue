@@ -1,18 +1,18 @@
 <template>
   <transition>
-    <div v-if="open"
+    <div v-if="active"
          class="fixed w-screen h-screen top-0 left-0 flex items-center justify-center p-4"
     >
-      <button class="absolute bg-gray-900/90 w-full h-full" @click="open = false"></button>
+      <button class="absolute bg-gray-900/90 w-full h-full" @click="active = false"></button>
       <div class="relative bg-white rounded-xl min-w-9/12 px-4 lg:px-32">
-        <button @click="open = false"
+        <button @click="active = false"
                 title="Fermer"
                 class="absolute top-0 right-0 lg:-mt-6 lg:-mr-6 bg-white rounded-full h-12 w-12 p-3 lg:shadow-lg"
         >
           <image-svg type="x" class="h-full w-full" />
         </button>
 
-        <form @submit.prevent="open = false">
+        <form @submit.prevent="active = false">
           <div class="flex flex-col lg:grid lg:grid-cols-2 gap-2 mx-auto my-10">
             <h2 class="text-3xl col-span-full lg:mb-10">
               Nous contacter
@@ -46,13 +46,17 @@
 <script setup lang="ts">
 import {watch} from "#imports";
 
-const open = ref(false);
+const active = ref(false);
 
-watch(open, (value) => {
+watch(active, (value) => {
   document.body.style.overflowY = value ? 'hidden' : 'auto';
 });
 
 defineExpose({open});
+
+function open() {
+    active.value = true;
+}
 </script>
 
 <style scoped>
