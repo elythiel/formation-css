@@ -1,5 +1,5 @@
 <template>
-  <div class="fixed top-0 bg-neutral-900 lg:bg-gray-900 text-white flex flex-wrap lg:flex-nowrap items-center justify-between py-2 px-4 md:py-4 md:px-8 w-full">
+  <div class="sticky top-0 bg-neutral-900 lg:bg-gray-900 text-white flex flex-wrap lg:flex-nowrap items-center justify-between py-2 px-4 md:py-4 md:px-8 w-full">
     <image-svg type="logo" alt="Logo" class="w-32 md:w-64" />
 
     <button class="block lg:hidden" @click="navOpened = !navOpened">

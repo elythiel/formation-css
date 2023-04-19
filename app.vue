@@ -1,7 +1,8 @@
 <template>
+  <page-nav />
+
   <page-header id="header" class="scroll-mt-0" />
 
-  <page-nav />
 
   <talk-container id="talks" class="my-20" />
   <speaker-container id="speakers" />
