@@ -1,28 +1,28 @@
 <template>
-  <div class="flex flex-col md:grid md:grid-cols-2 auto-rows-auto gap-6 bg-sky-900 lg:rounded-xl p-4">
+  <div class="bg-sky-900">
     <div v-for="talk in talks"
-         class="bg-white rounded-md p-3 flex flex-col gap-2"
+         class=""
     >
-      <h3 class="capitalize text-lg">
+      <h3 class="">
         {{ talk.title }}
       </h3>
-      <p class="font-light line-clamp-3 text-sm">
+      <p class="">
         {{ talk.description }}
       </p>
 
-      <div class="flex flex-wrap justify-start items-end mt-auto">
+      <div class="">
         <a v-for="speaker in talk.speakers.slice(0, 5)"
            :href="`#speaker-${speaker.id}`"
            :title="speaker.name"
-           class="-ml-2 first:ml-0 rounded-full hover:ring hover:z-10"
+           class=""
         >
           <img :src="`https://i.pravatar.cc/150?img=${speaker.id}`"
                :alt="`Speaker ${speaker.id}'s Avatar`"
-               class="rounded-full h-10 w-10"
+               class=""
           />
         </a>
 
-        <span class="ml-auto font-light text-sm">
+        <span class="">
         {{ talk.date.toLocaleString() }}
       </span>
       </div>

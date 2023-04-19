@@ -1,20 +1,24 @@
 <template>
   <transition>
     <div v-if="active"
-         class="fixed w-screen h-screen top-0 left-0 flex items-center justify-center p-4"
+         class=""
     >
-      <button class="absolute bg-gray-900/90 w-full h-full" @click="active = false"></button>
-      <div class="relative bg-white rounded-xl min-w-9/12 px-4 lg:px-32">
+      <button class="bg-gray-900/90"
+              @click="active = false"
+      >
+          <!-- Zone de fermeture "autour" de la modale -->
+      </button>
+      <div class="">
         <button @click="active = false"
                 title="Fermer"
-                class="absolute top-0 right-0 lg:-mt-6 lg:-mr-6 bg-white rounded-full h-12 w-12 p-3 lg:shadow-lg"
+                class=""
         >
-          <image-svg type="x" class="h-full w-full" />
+          <image-svg type="x" class="" />
         </button>
 
         <form @submit.prevent="active = false">
-          <div class="flex flex-col lg:grid lg:grid-cols-2 gap-2 mx-auto my-10">
-            <h2 class="text-3xl col-span-full lg:mb-10">
+          <div class="">
+            <h2 class="">
               Nous contacter
             </h2>
 
@@ -26,13 +30,13 @@
               Votre email
               <input type="email" required/>
             </label>
-            <label class="col-span-2">
+            <label class="">
               Votre message
               <textarea required rows="8" class="resize-none" />
             </label>
 
             <button type="submit"
-                    class="justify-self-start flex items-center justify-center gap-2 bg-sky-900 rounded text-white py-3 px-4">
+                    class="bg-sky-900 text-white">
               Envoyer
               <image-svg type="send"/>
             </button>
@@ -48,9 +52,9 @@ import {watch} from "#imports";
 
 const active = ref(false);
 
-watch(active, (value) => {
-  document.body.style.overflowY = value ? 'hidden' : 'auto';
-});
+// watch(active, (value) => {
+//   document.body.style.overflowY = value ? 'hidden' : 'auto';
+// });
 
 defineExpose({open});
 
@@ -60,11 +64,6 @@ function open() {
 </script>
 
 <style scoped>
-input,
-textarea {
-  @apply block border border-neutral-800 py-3 px-4 w-full mt-2;
-}
-
 .v-enter-active,
 .v-leave-active {
   transition: opacity 0.5s ease;

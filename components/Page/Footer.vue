@@ -1,5 +1,5 @@
 <template>
-  <footer class="text-center py-10">
+  <footer class="">
     <p class="text-gray-500">
       {{ faker.lorem.sentence(15) }}
     </p>
